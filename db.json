@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Ethiopian Yirgacheffe",
+      "description": "Bright, floral notes with a light body",
+      "origin": "Ethiopia",
+      "price": 14.99
+    },
+    {
+      "id": "2",
+      "name": "Colombian Supremo",
+      "description": "Balanced, nutty, medium body",
+      "origin": "Colombia",
+      "price": 12.5
+    },
+    {
+      "id": "3",
+      "name": "Sumatra Mandheling",
+      "description": "Earthy, full-bodied, low acidity",
+      "origin": "Indonesia",
+      "price": 13.75
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
