@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
 
-const API_URL = 'http://localhost:3001/products';
-
 export function useProducts() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchProducts = () => {
     setLoading(true);
-    fetch(API_URL)
+    fetch('http://localhost:3001/products')
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error('Failed to fetch products:', err))
@@ -20,7 +18,7 @@ export function useProducts() {
   }, []);
 
   const addProduct = (product) => {
-    return fetch(API_URL, {
+    return fetch('http://localhost:3001/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(product),
@@ -30,7 +28,7 @@ export function useProducts() {
   };
 
   const updateProductPrice = (id, price) => {
-    return fetch(`${API_URL}/${id}`, {
+    return fetch(`http://localhost:3001/products/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ price }),
@@ -40,7 +38,7 @@ export function useProducts() {
   };
 
   const deleteProduct = (id) => {
-    return fetch(`${API_URL}/${id}`, { method: 'DELETE' }).then(() => fetchProducts());
+    return fetch(`http://localhost:3001/products/${id}`, { method: 'DELETE' }).then(() => fetchProducts());
   };
 
   return { products, loading, addProduct, updateProductPrice, deleteProduct };
