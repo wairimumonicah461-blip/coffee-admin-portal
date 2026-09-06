@@ -1,16 +1,53 @@
-# React + Vite
+# Coffee Admin Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React SPA for managing a coffee shop's product catalog. Includes a public shop page for browsing/searching products, and an admin portal for adding, editing, and removing products — all backed by a simulated REST API.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React (functional components + custom hooks)
+- React Router (client-side routing)
+- Vite
+- json-server (simulated backend)
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+src/
+├── components/
+│ └── Navbar.jsx # Nav links to Home, Shop, Admin Portal
+├── hooks/
+│ └── useProducts.js # Custom hook: fetch, add, update, delete products
+├── pages/
+│ ├── Home.jsx # Landing page
+│ ├── Shop.jsx # Product list + live search
+│ └── AdminPortal.jsx # Add/edit/delete products
+├── App.jsx # Routes
+├── main.jsx # Entry point, wraps App in BrowserRouter
+db.json # Simulated backend data
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Browse products with live search
+- Add new products (name, description, price)
+- Edit a product's price
+- Delete products
+- All changes persist via the simulated backend
+
+## Getting Started
+
+Run the backend and frontend in two separate terminals:
+
+```bash
+npm run server   # starts json-server on port 3001
+npm run dev       # starts the React app
+```
+
+## Run Tests
+
+```bash
+npm run test
+```
+
+## Notes
+
+- Product data lives in `db.json`, served locally via json-server — not a real production backend.
