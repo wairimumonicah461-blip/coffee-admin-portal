@@ -10,7 +10,6 @@ A React SPA for managing a coffee shop's product catalog. Includes a public shop
 - json-server (simulated backend)
 
 ## Project Structure
-
 src/
 ├── components/
 │ └── Navbar.jsx # Nav links to Home, Shop, Admin Portal
@@ -42,12 +41,8 @@ npm run server   # starts json-server on port 3001
 npm run dev       # starts the React app
 ```
 
-## Run Tests
-
-```bash
-npm run test
-```
-
 ## Notes
 
 - Product data lives in `db.json`, served locally via json-server — not a real production backend.
+
+
